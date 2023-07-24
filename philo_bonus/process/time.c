@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   time.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cormiere <cormiere@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/23 11:45:11 by cormiere          #+#    #+#             */
+/*   Updated: 2023/07/23 11:51:01 by cormiere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/philo_bonus.h"
 
 // This function returns the current time in milliseconds.
@@ -20,7 +32,8 @@ long long	get_time_from_start(long long time_to_wait)
 	return (0);
 }
 
-// This function introduces a delay in milliseconds, while checking for the termination condition.
+// This function introduces a delay in milliseconds,
+// while checking for the termination condition.
 void	ft_usleep(t_data *data, long int time_in_ms)
 {
 	long int	start_time;

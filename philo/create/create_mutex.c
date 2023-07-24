@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_mutex.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cormiere <cormiere@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/23 11:43:46 by cormiere          #+#    #+#             */
+/*   Updated: 2023/07/23 11:48:16 by cormiere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/philo.h"
 
 // This function initializes the mutexes used for synchronization.
@@ -6,7 +18,8 @@ int	init_mutex(t_data *data)
 	if (pthread_mutex_init(&data->writing, NULL))
 		return (error_msg(MUTEX_INIT, 1));
 	if (pthread_mutex_init(&data->stop, NULL))
-		return (pthread_mutex_destroy(&data->writing), error_msg(MUTEX_INIT, 2));
+		return (pthread_mutex_destroy(&data->writing), \
+			error_msg(MUTEX_INIT, 2));
 	if (pthread_mutex_init(&data->time, NULL))
 		return (pthread_mutex_destroy(&data->writing),
 			pthread_mutex_destroy(&data->stop), error_msg(MUTEX_INIT, 3));

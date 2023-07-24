@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   routine.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cormiere <cormiere@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/23 11:44:14 by cormiere          #+#    #+#             */
+/*   Updated: 2023/07/24 15:05:36 by cormiere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/philo.h"
 
 // This function checks if the program should stop or terminate.
@@ -21,6 +33,11 @@ void	*routine(void *arg)
 
 	philo = (t_philo *)arg;
 	memory = philo->memory;
+	// if (memory->input.number_philo == 1)
+	// {
+	// 	single_philo(arg);
+	// 	exit (0);
+	// }
 	if (memory->input.number_meal)
 	{
 		while (!check(memory)
@@ -58,11 +75,15 @@ int	life_cycle(t_philo *philo, t_data *data)
 	return (0);
 }
 
-// This function represents the life cycle of a single philosopher in a scenario where there's only one philosopher.
-void	single_philo(t_data *data)
-{
-	data->time_start = get_time();
-	printf("0	1%s", TAKEN_FORK);
-	ft_usleep(data, data->input.to_die);
-	printf("%ld	1%s", data->input.to_die, PHILO_DIED);
-}
+// This function represents the life cycle of a single philosopher
+// in a scenario where there's only one philosopher.
+// void	single_philo(t_data *data)
+// {
+// 	data->time_start = get_time();
+// 	printf("0	1%s", TAKEN_FORK);
+// 	// pthread_mutex_lock(data->philo->right_fork);
+// 	// print_philo_action(data->philo, data, TAKEN_FORK);
+// 	// pthread_mutex_unlock(data->philo->right_fork);
+// 	ft_usleep(data, data->input.to_die);
+// 	printf("%ld	1%s", data->input.to_die, PHILO_DIED);
+// }

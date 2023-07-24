@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cormiere <cormiere@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/23 11:44:11 by cormiere          #+#    #+#             */
+/*   Updated: 2023/07/23 11:48:54 by cormiere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/philo.h"
 
 // This function checks if a philosopher has eaten the required number of meals.
@@ -13,7 +25,8 @@ int	has_eaten(t_data *data, int i)
 	return (1);
 }
 
-// This function is executed by a separate thread to continuously check if a philosopher has died or fulfilled the required number of meals.
+// This function is executed by a separate thread to continuously
+// check if a philosopher has died or fulfilled the required number of meals.
 void	*check_dead(void *arg)
 {
 	int		i;
@@ -36,7 +49,8 @@ void	*check_dead(void *arg)
 	return (NULL);
 }
 
-// This function checks if a philosopher is dead based on the time elapsed since their last meal.
+// This function checks if a philosopher is dead
+//based on the time elapsed since their last meal.
 int	is_philo_dead(t_data *data, int *i)
 {
 	long long	time;

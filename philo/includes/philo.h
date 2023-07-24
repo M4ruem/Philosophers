@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cormiere <cormiere@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/23 11:43:56 by cormiere          #+#    #+#             */
+/*   Updated: 2023/07/24 15:05:45 by cormiere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHILO_H
 # define PHILO_H
 
@@ -113,7 +125,7 @@ int			is_philo_dead(t_data *data, int *i);
 // routine.c
 void		*routine(void *arg);
 int			life_cycle(t_philo *philo, t_data *data);
-void		single_philo(t_data *data);
+//void		single_philo(t_data *data);
 
 // time.c
 long long	get_time(void);

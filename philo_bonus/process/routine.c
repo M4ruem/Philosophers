@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   routine.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cormiere <cormiere@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/23 11:45:08 by cormiere          #+#    #+#             */
+/*   Updated: 2023/07/23 11:51:36 by cormiere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/philo_bonus.h"
 
 // This function represents the behavior of a child process.
 int	child(t_data *data, t_philo *philo)
 {
-	while (!death(data, philo)
-		&& (!data->input.number_meal || philo->meal_count < data->input.number_meal))
+	while (!death(data, philo) \
+		&& (!data->input.number_meal || \
+		philo->meal_count < data->input.number_meal))
 	{
 		if (life_cycle(data, philo))
 		{

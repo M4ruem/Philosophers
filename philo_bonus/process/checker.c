@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cormiere <cormiere@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/23 11:45:04 by cormiere          #+#    #+#             */
+/*   Updated: 2023/07/23 11:51:50 by cormiere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/philo_bonus.h"
 
 // This function checks if a philosopher has died.
@@ -35,7 +47,8 @@ int	has_eaten(t_data *data, t_philo *philo)
 	return (0);
 }
 
-// This function is a thread routine that continuously checks if a philosopher has died or if the stopping condition is met.
+// This function is a thread routine that continuously checks if
+// a philosopher has died or if the stopping condition is met.
 void	*check_dead(void *arg)
 {
 	t_philo	*philo;

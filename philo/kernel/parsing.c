@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cormiere <cormiere@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/23 11:44:00 by cormiere          #+#    #+#             */
+/*   Updated: 2023/07/23 11:46:17 by cormiere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/philo.h"
 
-// This function checks if a given string represents a valid number.
+// This function checks if a given string
+// represents a valid number.
 int	is_num(char *str)
 {
 	int	i;
@@ -13,7 +26,8 @@ int	is_num(char *str)
 	return (0);
 }
 
-// This function checks if the command-line arguments represent valid positive integers.
+// This function checks if the command-line
+// arguments represent valid positive integers.
 int	is_positive(int ac, char **av)
 {
 	int		i;
@@ -34,7 +48,8 @@ int	is_positive(int ac, char **av)
 	return (0);
 }
 
-// This function performs the initial command-line argument parsing and validation.
+// This function performs the initial command-line
+// argument parsing and validation.
 int	parsing(int ac, char **av)
 {
 	if (ac != 5 && ac != 6)

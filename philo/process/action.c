@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   action.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cormiere <cormiere@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/23 11:44:08 by cormiere          #+#    #+#             */
+/*   Updated: 2023/07/23 11:49:39 by cormiere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/philo.h"
 
-// This function represents the eating action of a philosopher in the dining philosophers scenario.
+// This function represents the eating action of
+// a philosopher in the dining philosophers scenario.
 int	eating(t_philo *philo, t_data *data)
 {
 	if (print_philo_action(philo, data, EATING))
@@ -18,7 +31,8 @@ int	eating(t_philo *philo, t_data *data)
 	return (0);
 }
 
-// This function is responsible for acquiring the necessary forks and initiating the eating process for a philosopher.
+// This function is responsible for acquiring the necessary
+// forks and initiating the eating process for a philosopher.
 int	fork_init_eating(t_philo *philo, t_data *data)
 {
 	if (philo->pos == 0)
@@ -44,7 +58,8 @@ int	fork_init_eating(t_philo *philo, t_data *data)
 	return (eating(philo, data));
 }
 
-// This function represents the sleeping action of a philosopher in the dining philosophers scenario.
+// This function represents the sleeping action of
+// a philosopher in the dining philosophers scenario.
 int	sleeping(t_philo *philo, t_data *data)
 {
 	if (print_philo_action(philo, data, SLEEPING))
@@ -53,7 +68,8 @@ int	sleeping(t_philo *philo, t_data *data)
 	return (0);
 }
 
-// This function represents the thinking action of a philosopher in the dining philosophers scenario.
+// This function represents the thinking action of
+// a philosopher in the dining philosophers scenario.
 int	thinking(t_philo *philo, t_data *data)
 {
 	if (print_philo_action(philo, data, THINKING))
