@@ -125,7 +125,7 @@ int			is_philo_dead(t_data *data, int *i);
 // routine.c
 void		*routine(void *arg);
 int			life_cycle(t_philo *philo, t_data *data);
-//void		single_philo(t_data *data);
+void		single_philo(t_data *data);
 
 // time.c
 long long	get_time(void);

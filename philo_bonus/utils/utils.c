@@ -56,8 +56,8 @@ void	*ft_calloc(size_t n, size_t size)
 	void	*tab;
 	char	*str;
 
-	if (n < 0 || size < 0)
-		return (NULL);
+/*	if (n < 0 || size < 0)
+		return (NULL);*/
 	tab = malloc(n * size);
 	if (!tab)
 		return (NULL);

@@ -77,13 +77,17 @@ int	life_cycle(t_philo *philo, t_data *data)
 
 // This function represents the life cycle of a single philosopher
 // in a scenario where there's only one philosopher.
-// void	single_philo(t_data *data)
-// {
-// 	data->time_start = get_time();
-// 	printf("0	1%s", TAKEN_FORK);
-// 	// pthread_mutex_lock(data->philo->right_fork);
-// 	// print_philo_action(data->philo, data, TAKEN_FORK);
-// 	// pthread_mutex_unlock(data->philo->right_fork);
-// 	ft_usleep(data, data->input.to_die);
-// 	printf("%ld	1%s", data->input.to_die, PHILO_DIED);
-// }
+ void	single_philo(t_data *data)
+ {
+	pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+	pthread_mutex_lock(&mutex);
+ 	data->time_start = get_time();
+ 	printf("0	1%s", TAKEN_FORK);
+ 	// pthread_mutex_lock(data->philo->right_fork);
+ 	// print_philo_action(data->philo, data, TAKEN_FORK);
+ 	// pthread_mutex_unlock(data->philo->right_fork);
+ 	//ft_usleep(data, data->input.to_die);
+ 	printf("%ld	1%s", data->input.to_die, PHILO_DIED);
+	pthread_mutex_unlock(&mutex);
+ }
