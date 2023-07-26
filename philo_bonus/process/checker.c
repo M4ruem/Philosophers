@@ -53,18 +53,22 @@ void	*check_dead(void *arg)
 {
 	t_philo	*philo;
 	t_data	*data;
+	bool	should_exit;
 
+	should_exit = false;
 	philo = (t_philo *)arg;
 	data = philo->memory;
-	while (!death(data, philo)
-		&& (!data->input.number_meal || !has_eaten(data, philo)))
+	while (!should_exit && (!death(data, philo)
+		&& (!data->input.number_meal || !has_eaten(data, philo))))
 	{
 		if (is_philo_dead(philo, data))
 		{
-			pthread_detach(philo->thread);
-			return (NULL);
+			should_exit = true;
+			//pthread_detach(philo->thread);
+			//return (NULL);
+			//pthread_exit(NULL);
 		}
 	}
-	pthread_detach(philo->thread);
+	//pthread_detach(philo->thread);
 	return (NULL);
 }

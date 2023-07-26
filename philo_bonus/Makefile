@@ -7,7 +7,7 @@ SRCS		=	main.c \
 
 OBJS		=	${SRCS:.c=.o}
 
-CC			=	@clang
+CC			=	@gcc
 
 CFLAGS		=	-Wall -Werror -Wextra -g3 -pthread
 
