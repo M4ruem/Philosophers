@@ -33,11 +33,6 @@ void	*routine(void *arg)
 
 	philo = (t_philo *)arg;
 	memory = philo->memory;
-	// if (memory->input.number_philo == 1)
-	// {
-	// 	single_philo(arg);
-	// 	exit (0);
-	// }
 	if (memory->input.number_meal)
 	{
 		while (!check(memory)
@@ -77,17 +72,22 @@ int	life_cycle(t_philo *philo, t_data *data)
 
 // This function represents the life cycle of a single philosopher
 // in a scenario where there's only one philosopher.
- void	single_philo(t_data *data)
- {
-	pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+void	*single_philo(void *ptr)
+{
+	t_data *data = (t_data *)ptr;
+	pthread_mutex_t mutex;
+
+	pthread_mutex_init(&mutex, NULL);
 
 	pthread_mutex_lock(&mutex);
- 	data->time_start = get_time();
- 	printf("0	1%s", TAKEN_FORK);
- 	// pthread_mutex_lock(data->philo->right_fork);
- 	// print_philo_action(data->philo, data, TAKEN_FORK);
- 	// pthread_mutex_unlock(data->philo->right_fork);
- 	//ft_usleep(data, data->input.to_die);
- 	printf("%ld	1%s", data->input.to_die, PHILO_DIED);
+	data->time_start = get_time();
+	printf("0	1%s", TAKEN_FORK);
+	ft_usleep(data, data->input.to_die);
+	printf("%ld	1%s", data->input.to_die, PHILO_DIED);
 	pthread_mutex_unlock(&mutex);
- }
+
+	pthread_mutex_destroy(&mutex);
+
+	return NULL;
+}

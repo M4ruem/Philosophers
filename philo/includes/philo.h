@@ -51,6 +51,7 @@ typedef struct s_philo
 	pthread_mutex_t	*left_fork;
 	long long		time_until_die;
 	void			*memory;
+	pthread_mutex_t mutex;
 }				t_philo;
 
 typedef struct s_input
@@ -125,7 +126,7 @@ int			is_philo_dead(t_data *data, int *i);
 // routine.c
 void		*routine(void *arg);
 int			life_cycle(t_philo *philo, t_data *data);
-void		single_philo(t_data *data);
+void		*single_philo(void *ptr);
 
 // time.c
 long long	get_time(void);
